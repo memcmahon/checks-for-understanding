@@ -5,6 +5,7 @@ Fork this respository. Answer the questions to the best of your ability. Try to 
 Note: When you're done, submit a PR.
 
 1. At a high level, what is ActiveRecord? What does it do/allow you to do?
+  * ActiceRecord is a DSL which helps with communicating with and manipulating a database.
 2. Assume you have the following model:
 
 ```ruby
@@ -13,8 +14,10 @@ end
 ```
 
 What are some methods you can call on `Team`? If these methods aren't defined in the class, how do you have access to them?
+  * Team.all, Team.count, Team.sum(attribute), Team.average(attribute), Team.find(id), Team.where(attribute).  We have access to these methods because they are inherited from ActiveRecord
 
 3. Assume that in your database, a team has the following attributes: "id", "name", owner_id". How would you find the name of a team with an id of 4? Assuming your class only included the code from question 2, how could you find the owner of the same team?
+  * Team.find(4).name
 
 4. Assume that you added a line to your `Team` class as follows:
 
@@ -25,11 +28,16 @@ end
 ```
 
 Now how would you find the owner of the team with an id of 4?
+  * Team.find(4).owner
 
 5. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.
+  * Teachers will have many students and students will have many teachers.  There will be a join table in the database to caputure this relationship.
 6. Define foreign key, primary key, and schema.
+  * Foreign key is a column on a database which relates directly to the primary id of another table.  The primary id is the unique identifier for each record on the table.  The schema is a visable representation of the database tables.
 7. Describe the relationship between a foreign key on one table and a primary key on another table.
+  * A foriegn key is an attribute of a record on one table that directly corresponsds with the primary key of a record on a second table; this forms relationships between the two tables.
 8. What are the parts of an HTTP response?
+  * Status, Header, Body
 
 
 ### Optional Questions
